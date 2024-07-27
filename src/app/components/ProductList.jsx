@@ -9,26 +9,6 @@ export const ProductList = ({
   total,
   setTotal,
 }) => {
-  const onAddProduct = (product) => {
-    if (allProducts.find((item) => item.id === product.id)) {
-      const products = allProducts.map((item) =>
-        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-      );
-      setTotal(total + product.price * product.quantity);
-      setCountProducts(countProducts + product.quantity);
-      return setAllProducts([...products]);
-    }
-
-    setTotal(total + product.price * product.quantity);
-    setCountProducts(countProducts + product.quantity);
-    setAllProducts([...allProducts, product]);
-  };
-
-  const showProductResume = (product) => {
-    if (allProducts.find((item) => item.id === product.id)) {
-    }
-  };
-
   return (
     <div class="container-items">
       {data.map((product) => (
@@ -43,7 +23,9 @@ export const ProductList = ({
             <img src={product.imagen} alt={product.title} class="item-image" />
           </div>
           <div class="item-specif-container">
-            <p class="item-specif">CARÁCTERISTICAS: {product.caracteristicas}</p>
+            <p class="item-specif">
+              CARÁCTERISTICAS: {product.caracteristicas}
+            </p>
           </div>
         </div>
       ))}

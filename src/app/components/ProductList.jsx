@@ -1,14 +1,7 @@
 import React from "react";
 import { data } from "../data";
 
-export const ProductList = ({
-  allProducts,
-  setAllProducts,
-  countProducts,
-  setCountProducts,
-  total,
-  setTotal,
-}) => {
+export const ProductList = ({}) => {
   return (
     <div class="container-items">
       {data.map((product) => (
